@@ -1,6 +1,6 @@
 <?php defined('BASEPATH') OR exit('No direct script access allowed');
 
-class usuario extends CI_Controller{
+class Usuario extends CI_Controller{
 	function __construct(){
 		parent::__construct();
 		$this->load->helper('form');
