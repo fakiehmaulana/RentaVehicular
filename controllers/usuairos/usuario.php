@@ -14,7 +14,7 @@ class usuario extends CI_Controller{
 
 	function nuevo(){
 		$this->load->view('usuario/header');
-		$this->load->view('usuario/formularioCliente');
+		$this->load->view('usuario/formularioUsuario');
 	}
 
 	function recibirdatos(){
@@ -28,7 +28,7 @@ class usuario extends CI_Controller{
 		
 		$this->usuario_model->crearUsuario($data);
 		$this->load->view('usuario/header');
-		$this->load->view('usuario/formularioCliente');
+		$this->load->view('usuario/formularioUsuario');
 	}
 
 }
