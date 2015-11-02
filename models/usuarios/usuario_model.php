@@ -11,7 +11,7 @@ class usuario_model	 extends CI_Model{
 			'direccion' => 	$data['direccion']
 			);
 
-		$this->db->insert('rentavehicular' , $datos);
+		$this->db->insert('usuario' , $datos);
 	}
 }
 
