@@ -42,7 +42,7 @@ if($usuarios){
 				<?= $usuario->cedula;  ?>
 			</td>
 			<td>
-				<?= $usuario->licencia;  ?>
+				<?= $usuario->licenciaConduccion;  ?>
 			</td>
 			<td>
 				<?= $usuario->email;  ?>
