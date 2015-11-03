@@ -38,16 +38,6 @@ Ejecuta el metodo del controlador.
 		'placeholder' => 'observaciones sobre el vehiculo'
 		);
 
-	$vehiculo =	array(
-		'name' => 'vehiculo',
-		'placeholder' => 'ID del vehiculo'
-		);
-
-	$usuario = array(
-		'name' => 'usuario',
-		'placeholder' => 'id del usuario'
-		);
-
  ?>
 <div class='form-group'>
  	<?= form_label('Fecha:','fecha') ?>
@@ -66,12 +56,30 @@ Ejecuta el metodo del controlador.
 
 <div class='form-group'>
  	<?= form_label('Vehiculo:','vehiculo') ?>
- 	<?= form_input($vehiculo) ?>
+ 	<select id="idVehiculo" name="vehiculo">
+ 		<?php
+ 			if($vehiculos){
+ 				foreach ($vehiculos->result() as $vehiculo) {
+ 					echo '<option value="'.$vehiculo->idVehiculo.'">'.$vehiculo->Placa.'</option>';
+ 				}
+
+ 			}
+ 		?>
+ 	</select>
  </div>
 
 <div class='form-group'>
  	<?= form_label('Usuario:','usuario') ?>
- 	<?= form_input($usuario) ?>
+ 	<select id="idUsuario" name="usuario">
+ 		<?php
+ 			if($usuarios){
+ 				foreach ($usuarios->result() as $usuario) {
+ 					echo '<option value="'.$usuario->idUsuario.'">'.$usuario->cedula.'</option>';
+ 				}
+
+ 			}
+ 		?>
+ 	</select>	
  </div>
 
 <div class='form-group'>
@@ -99,6 +107,5 @@ Ejecuta el metodo del controlador.
     <script src=<?= base_url('bootstrap/js/bootstrap.min.js'); ?> ></script>
       <script src=<?= base_url('bootstrap/js/bootstrap1.min.js'); ?> ></script>
 
-</table>
 </body>
 </html>

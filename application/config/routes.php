@@ -45,6 +45,8 @@ $route['nuevo_cliente'] = 'usuarios/usuario/nuevo';
 $route['ver_clientes'] = 'usuarios/usuario';
 $route['nueva_devolucion'] = 'devoluciones/devolucion/nueva';
 $route['ver_devoluciones'] = 'devoluciones/devolucion';
+$route['nuevo_vehiculo'] = 'vehiculos/vehiculo/nuevoVehiculo';
+$route['ver_vehiculos'] = 'vehiculos/vehiculo';
 $route['404_override'] = '';
 
 

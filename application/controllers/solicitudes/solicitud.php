@@ -5,6 +5,8 @@ class Solicitud extends CI_Controller {
 		parent::__construct();
 		$this->load->helper('form');
 		$this->load->model('solicitudes/solicitud_model');
+		$this->load->model('usuarios/usuario_model');
+		$this->load->model('vehiculos/vehiculo_model');
 	}
 
 	
@@ -18,8 +20,12 @@ class Solicitud extends CI_Controller {
 	*Funcion para cargar la vista nueva para ingresar solicitudes.
 	*/
 	function nueva(){
+		$data = array(
+			'usuarios' => $this->usuario_model->obtenerUsuarios(),
+			'vehiculos' => $this->vehiculo_model->cargarVehiculos()
+		 );
 		$this->load->view('header');
-		$this->load->view('solicitudes/nueva');
+		$this->load->view('solicitudes/nueva',$data);
 	}
 
 

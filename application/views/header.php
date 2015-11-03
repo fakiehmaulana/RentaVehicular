@@ -29,9 +29,20 @@
       <a class="brand" href="#">QUINDI-CAR</a>
       <div class="nav-collapse">
         <ul class="nav nav-tabs">
-          <li class="active"><a href="#">Home</a></li>
+          <li class="active"><a href=<?= base_url('ver_vehiculos'); ?> >Home</a></li>
           
           <li class="#"><a href="">Iniciar Sesión </a></li>
+
+      <li class="dropdown">
+        <a class="dropdown-toggle" href="#" data-toggle="dropdown">Vehiculos<span class="caret"></span></a>
+           <ul class="dropdown-menu">
+        <li><a href=<?= base_url('nuevo_vehiculo'); ?> >Agregar Vehiculos</a></li>
+        <li><a href=<?= base_url('ver_vehiculos'); ?>>Visualizar Vehiculos</a></li>
+        <li><a href=<?= base_url('nuevo_vehiculo'); ?>>Eliminar Vehiculos</a></li>
+        
+        </ul>
+          </li>
+
           <li class="dropdown">
           <a class="dropdown-toggle" href="#" data-toggle="dropdown">Clientes<span class="caret"></span></a>
            <ul class="dropdown-menu">

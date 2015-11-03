@@ -27,7 +27,7 @@ class Solicitud_model	 extends CI_Model{
 	*/
 	function cargarSolicitudes(){
 		$query = $this->db->get('solicitudrenta');
-		if($query->num_rows > 0) return $query;
+		if($query->num_rows() > 0) return $query;
 		else return false;
 	}
 
@@ -38,7 +38,7 @@ class Solicitud_model	 extends CI_Model{
 	function cargarSolicitud($id){
 		$this->db->where('idSolicitudRenta',$id);
 		$query = $this->db->get('solicitudrenta');
-		if($query->num_rows > 0) return $query;
+		if($query->num_rows() > 0) return $query;
 		else return false;
 	}
 }

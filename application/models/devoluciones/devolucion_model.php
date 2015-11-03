@@ -29,7 +29,7 @@ class Devolucion_model	 extends CI_Model{
 	*/
 	function cargarDevoluciones(){
 		$query = $this->db->get('devolucionrenta');
-		if($query->num_rows > 0) return $query;
+		if($query->num_rows() > 0) return $query;
 		else return false;
 	}
 
@@ -40,7 +40,7 @@ class Devolucion_model	 extends CI_Model{
 	function cargarDevolucion($id){
 		$this->db->where('idDevolucionRenta',$id);
 		$query = $this->db->get('devolucionrenta');
-		if($query->num_rows > 0) return $query;
+		if($query->num_rows() > 0) return $query;
 		else return false;
 	}
 }

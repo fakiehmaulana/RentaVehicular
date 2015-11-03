@@ -5,6 +5,8 @@ class Devolucion extends CI_Controller {
 		parent::__construct();
 		$this->load->helper('form');
 		$this->load->model('devoluciones/devolucion_model');
+		$this->load->model('usuarios/usuario_model');
+		$this->load->model('vehiculos/vehiculo_model');
 	}
 
 	
@@ -18,8 +20,12 @@ class Devolucion extends CI_Controller {
 	*Funcion para cargar la vista nueva para ingresar devoluciones.
 	*/
 	function nueva(){
+		$data = array(
+			'usuarios' => $this->usuario_model->obtenerUsuarios(),
+			'vehiculos' => $this->vehiculo_model->cargarVehiculos()
+		 );
 		$this->load->view('header');
-		$this->load->view('devoluciones/nueva');
+		$this->load->view('devoluciones/nueva',$data);
 	}
 
 
