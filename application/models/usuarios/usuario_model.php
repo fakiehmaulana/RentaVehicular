@@ -26,7 +26,7 @@ class Usuario_model	 extends CI_Model{
 	function obtenerUsuarios(){
 		$query = $this->db->get('usuario');
 		if($query->num_rows() > 0) return $query;
-		else return fasle;
+		else return false;
 	}
 }
 ?>
