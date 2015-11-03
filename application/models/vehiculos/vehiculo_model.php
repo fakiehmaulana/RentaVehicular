@@ -31,7 +31,7 @@ class Vehiculo_model extends CI_Model{
 	function cargarVehiculo($id){
 		$this->db->where('idVehiculo',$id);
 		$query = $this->db->get('vehiculo');
-		if($query->num_rows > 0) return $query;
+		if($query->num_rows() > 0) return $query;
 		else return false;
 	}
 }
