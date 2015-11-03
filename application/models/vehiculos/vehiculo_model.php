@@ -35,4 +35,8 @@ class Vehiculo_model extends CI_Model{
 		else return false;
 	}
 }
+<<<<<<< HEAD
 ?>
+=======
+?>
+>>>>>>> origin/codeIgniterHernan

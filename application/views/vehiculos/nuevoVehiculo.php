@@ -1,8 +1,11 @@
+<<<<<<< HEAD
   <div class="panel panel-primary">
     <div class="panel-heading">
           <h3 class="panel-title">Agregar Vehiculo</h3>
         </div>
         <div class="panel-body">
+=======
+>>>>>>> origin/codeIgniterHernan
 <?=
 //comando para ejecutar metodo del controlador
  form_open("/vehiculos/vehiculo/recibirdatos") ?>
@@ -51,6 +54,7 @@
 		);
  ?>
 
+<<<<<<< HEAD
 <div class='form-group'>
  	<?= form_label('Tipo:','tipo') ?>
  	<?= form_input($tipo) ?>
@@ -100,11 +104,48 @@
  	<?= form_label('Kilometraje:','kilometraje') ?>
  	<?= form_input($kilometraje) ?>
 </div>
+=======
+ 	<?= form_label('Tipo:','tipo') ?>
+ 	<?= form_input($tipo) ?>
+ 	<br>
+
+ 	<?= form_label('URl Foto:','urlFoto') ?>
+ 	<?= form_input($urlFoto) ?>
+ 	<br>
+
+ 	<?= form_label('Marca:','marca') ?>
+ 	<?= form_input($marca) ?>
+ 	<br>
+
+ 	<?= form_label('Capacidad:','capacidad') ?>
+ 	<?= form_input($capacidad) ?>
+ 	<br>
+
+ 	<?= form_label('Precio:','precio') ?>
+ 	<?= form_input($precio) ?>
+ 	<br>
+
+ 	<?= form_label('Disponibilidad:','disponibilidad') ?>
+ 	<?= form_input($disponibilidad) ?>
+ 	<br>
+ 	<?= form_label('Color:','color') ?>
+ 	<?= form_input($color) ?>
+ 	<br>
+ 	<?= form_label('Modelo:','modelo') ?>
+ 	<?= form_input($modelo) ?>
+ 	<br>
+ 	<?= form_label('Placa:','placa') ?>
+ 	<?= form_input($placa) ?>
+ 	<br>
+ 	<?= form_label('Kilometraje:','kilometraje') ?>
+ 	<?= form_input($kilometraje) ?>
+>>>>>>> origin/codeIgniterHernan
  	<br><br><br>
 
 	<?= form_submit('','Agregar')?>
  <?= form_close() ?>
 
+<<<<<<< HEAD
 </div>
 </div>
 </div>
@@ -118,3 +159,7 @@
 
 </body>
 </html>
+=======
+</body>
+</html>
+>>>>>>> origin/codeIgniterHernan
