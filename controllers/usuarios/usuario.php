@@ -9,15 +9,23 @@ class Usuario extends CI_Controller{
 	*Funcion que carga la vista 
 	*/
 	function index(){
-		$data['usuarios'] = $this->usuario_model-> obtenerUsuarios();
-		$this->load->view('usuario/header');
+		$data ['segmento'] = $this->uri->segment(4);
+		$this->load->view('header');
+		if(!$data['segmento']){
+			$data['usuarios'] = $this->usuario_model-> obtenerUsuarios();
+		
+		}
+		else {
+			$data['usuarios'] = $this->usuario_model->obtenerUsuario($data ['segmento']);
+		}
+		
 		$this->load->view('usuario/usuarios' , $data);
 	}
 	/*
 	* Funcion que sirve para cargar la vista del formulario para crear usuarios
 	*/
 	function nuevo(){
-		$this->load->view('usuario/header');
+		$this->load->view('header');
 		$this->load->view('usuario/formularioUsuario');
 	}
 	
@@ -30,15 +38,39 @@ class Usuario extends CI_Controller{
 		$data = array(
 			'nombre' => $this->input->post('nombre'),
 			'cedula' => $this->input->post('cedula'),
-			'licencia' => $this->input->post('licencia'),
+			'licenciaConduccion' => $this->input->post('licenciaConduccion'),
 			'email' => $this->input->post('email'),
 			'telefono' => $this->input->post('telefono'),
 			'direccion' => $this->input->post('direccion')
 			);
 		
 		$this->usuario_model->crearUsuario($data);
-		$this->load->view('usuario/header');
+		$this->load->view('header');
 		$this->load->view('usuario/formularioUsuario');
+	}
+
+	function editar(){
+		$data['id'] = $this->uri->segment(4);
+		$data['usuario'] = $this->usuario_model->obtenerUsuario($data['id']);
+		$this->load->view('header');
+		$this->load->view('usuario/editar' , $data);
+	}
+	function borrar(){
+		$id = $this->uri->segment(4);
+		$this->usuario_model->eliminarUsuario($id);
+		
+	}
+	function actualizar(){
+		$data = array(
+			'nombre' => $this->input->post('nombre'),
+			'cedula' => $this->input->post('cedula'),
+			'licenciaConduccion' => $this->input->post('licenciaConduccion'),
+			'email' => $this->input->post('email'),
+			'telefono' => $this->input->post('telefono'),
+			'direccion' => $this->input->post('direccion')
+			);
+		$this->usuario_model->actualizarUsuario($this->uri->segment(4),$data);
+		$this->load->view('header');
 	}
 }
 ?>
