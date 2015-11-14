@@ -1,11 +1,8 @@
-<<<<<<< HEAD
   <div class="panel panel-primary">
     <div class="panel-heading">
           <h3 class="panel-title">Vehiculos</h3>
         </div>
         <div class="panel-body">
-=======
->>>>>>> origin/codeIgniterHernan
 <table width='90%' border='1' align='center'>
 	<tr>
 		<td>
@@ -88,7 +85,6 @@ if($vehiculos){
 	 ?>
 
 </table>
-<<<<<<< HEAD
 </div>
 </div>
 </div>
@@ -101,7 +97,3 @@ if($vehiculos){
       <script src=<?= base_url('bootstrap/js/bootstrap1.min.js'); ?> ></script>
 </body>
 </html>
-=======
-</body>
-</html>
->>>>>>> origin/codeIgniterHernan

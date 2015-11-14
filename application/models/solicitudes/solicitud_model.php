@@ -33,13 +33,39 @@ class Solicitud_model	 extends CI_Model{
 
 
 	/*
-	*Funcion para cargar todas una solicitud de renta de la base de datos.
+	*Funcion para cargar una solicitud de renta de la base de datos.
 	*/
 	function cargarSolicitud($id){
 		$this->db->where('idSolicitudRenta',$id);
 		$query = $this->db->get('solicitudrenta');
 		if($query->num_rows() > 0) return $query;
 		else return false;
+	}
+
+	/*
+	*Funcion para actualziar una solicitud de renta en la base de datos.
+	*/
+	function actualizarSolicitud($id,$data){
+
+		$data = array(
+			'Fecha' => 			$data['fecha'],
+			'Hora' => 			$data['hora'],
+			'Kilometraje' => 	$data['kilometraje'],
+			'idVehiculo' => 	$data['vehiculo'],
+			'idUsuario' => 		$data['usuario'],
+		 );
+
+		$this->db->where('idSolicitudRenta',$id);
+
+		$query = $this->db->update('solicitudrenta',$data);
+	}
+
+	/*
+	*Funcion para eliminar una solicitud de renta.
+	*/
+	function eliminarSolicitud($id){
+		$this->db->delete('solicitudrenta',array('idSolicitudRenta'=>$id));
+
 	}
 }
 

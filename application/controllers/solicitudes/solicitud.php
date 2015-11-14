@@ -11,10 +11,10 @@ class Solicitud extends CI_Controller {
 
 	
 	function index(){
-		$data['solicitudes'] = $this->solicitud_model->cargarSolicitudes();
-		$this->load->view('header');
-		$this->load->view('solicitudes/solicitudes',$data);
-	}
+			$data['solicitudes'] = $this->solicitud_model->cargarSolicitudes();
+			$this->load->view('header');
+			$this->load->view('solicitudes/solicitudes',$data);
+	}	
 
 	/*
 	*Funcion para cargar la vista nueva para ingresar solicitudes.
@@ -24,8 +24,7 @@ class Solicitud extends CI_Controller {
 			'usuarios' => $this->usuario_model->obtenerUsuarios(),
 			'vehiculos' => $this->vehiculo_model->cargarVehiculos()
 		 );
-		$this->load->view('header');
-		$this->load->view('solicitudes/nueva',$data);
+		redirect(base_url('ver_solicitudes'));
 	}
 
 
@@ -44,8 +43,42 @@ class Solicitud extends CI_Controller {
 			);
 
 		$this->solicitud_model->crearSolicitud($data);
+		redirect(base_url('ver_solicitudes'));
+	}
+
+	/*
+	*Funcion para abrir la vista de editar de los datos de una solicitud.
+	*/
+	function editar(){
+		$data['idSolicitud'] = $this->uri->segment(4);
+		$data['solicitud'] = $this->solicitud_model->cargarSolicitud($data['idSolicitud']);
+		$data['usuarios'] = $this->usuario_model->obtenerUsuarios();
+		$data['vehiculos'] = $this->vehiculo_model->cargarVehiculos();
 		$this->load->view('header');
-		$this->load->view('solicitudes/nueva');
+		$this->load->view('solicitudes/editar',$data);
+	}
+
+	/*
+	*Funcion para actualizar una solicitud.
+	*/
+	function actualizar(){
+		$data = array(
+			'fecha' => $this->input->post('fecha'),
+			'hora' => $this->input->post('hora'),
+			'kilometraje' => $this->input->post('kilometraje'),
+			'vehiculo' => $this->input->post('vehiculo'),
+			'usuario' => $this->input->post('usuario'), 
+			);
+
+		$this->solicitud_model->actualizarSolicitud($this->uri->segment(4),$data);
+		redirect(base_url('ver_solicitudes'));
+
+	}
+
+	function eliminar(){
+		$id = $this->uri->segment(4);
+		$this->solicitud_model->eliminarSolicitud($id);
+		redirect(base_url('ver_solicitudes'));
 	}
 
 }

@@ -32,7 +32,7 @@ if($solicitudes){
  foreach ($solicitudes->result() as $solicitud) { ?>
 		<tr>
 			<td>
-				<?= $solicitud->idSolicitudRenta;  ?>
+				<center><?= $solicitud->idSolicitudRenta;  ?></center>
 			</td>
 			<td>
 				<?= $solicitud->idUsuario;  ?>
@@ -48,6 +48,17 @@ if($solicitudes){
 			</td>
 			<td>
 				<?= $solicitud->Hora;  ?>
+			</td>
+			<td>
+				<a href="<?= base_url("/solicitudes/solicitud/editar/".$solicitud->idSolicitudRenta);  ?>">
+					Editar
+			</a>
+			</td>
+			<td>
+				<a href="<?= base_url("/solicitudes/solicitud/eliminar/".$solicitud->idSolicitudRenta);  ?>"
+				 onclick="return confirm('Desea Eliminar esta solicitud?')">
+					Eliminar
+			</a>
 			</td>
 		</tr>
 
