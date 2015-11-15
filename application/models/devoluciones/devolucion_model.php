@@ -28,7 +28,10 @@ class Devolucion_model	 extends CI_Model{
 	*Funcion para cargar todas las devoluciones de renta de la base de datos.
 	*/
 	function cargarDevoluciones(){
-		$query = $this->db->get('devolucionrenta');
+		$query = "SELECT *, (SELECT placa from vehiculo where vehiculo.idvehiculo = devolucionrenta.idvehiculo) as placa,
+					(select cedula from usuario where usuario.idusuario = devolucionrenta.idusuario) as cedula
+ 					from devolucionrenta";
+ 		$query = $this->db->query($query);
 		if($query->num_rows() > 0) return $query;
 		else return false;
 	}
@@ -42,6 +45,35 @@ class Devolucion_model	 extends CI_Model{
 		$query = $this->db->get('devolucionrenta');
 		if($query->num_rows() > 0) return $query;
 		else return false;
+	}
+
+
+	/*
+	*Funcion para actualziar una devolucion de renta en la base de datos.
+	*/
+	function actualizarDevolucion($id,$data){
+
+		$data = array(
+			'Fecha' => 			$data['fecha'],
+			'Hora' => 			$data['hora'],
+			'Kilometraje' => 	$data['kilometraje'],
+			'estado' => 		$data['estado'],
+			'observaciones' => 	$data['observaciones'],
+			'idVehiculo' => 	$data['vehiculo'],
+			'idUsuario' => 		$data['usuario'],
+		 );
+
+		$this->db->where('idDevolucionRenta',$id);
+
+		$query = $this->db->update('devolucionrenta',$data);
+	}
+
+	/*
+	*Funcion para eliminar una devolucion de renta.
+	*/
+	function eliminarDevolucion($id){
+		$this->db->delete('devolucionrenta',array('idDevolucionRenta'=>$id));
+
 	}
 }
 

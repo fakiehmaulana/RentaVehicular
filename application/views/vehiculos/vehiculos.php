@@ -77,6 +77,17 @@ if($vehiculos){
 			<td>
 				<?= $vehiculo->Kilometraje;  ?>
 			</td>
+			<td>
+				<a href="<?= base_url("/vehiculos/vehiculo/editar/".$vehiculo->idVehiculo);  ?>">
+					Editar
+			</a>
+			</td>
+			<td>
+				<a href="<?= base_url("/vehiculos/vehiculo/eliminar/".$vehiculo->idVehiculo);  ?>"
+				 onclick="return confirm('Desea Eliminar este vehiculo?')">
+					Eliminar
+			</a>
+			</td>
 		</tr>
 
 

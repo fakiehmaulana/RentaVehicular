@@ -57,6 +57,11 @@ if($usuarios){
 			<td>
 				<?= $usuario->direccion;  ?>
 			</td>
+			<td>
+				<a href="<?= base_url("/usuarios/usuario/editar/".$usuario->idUsuario);  ?>">
+					Editar
+			</a>
+			</td>
 		</tr>
 
 

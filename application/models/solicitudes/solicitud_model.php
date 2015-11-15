@@ -4,6 +4,8 @@ class Solicitud_model	 extends CI_Model{
 	function __construct(){
 		parent::__construct();
 		$this->load->database();
+		$this->load->model('usuarios/usuario_model');
+		$this->load->model('vehiculos/vehiculo_model');
 	}
 
 	/*
@@ -26,7 +28,10 @@ class Solicitud_model	 extends CI_Model{
 	*Funcion para cargar todas las solicitudes de renta de la base de datos.
 	*/
 	function cargarSolicitudes(){
-		$query = $this->db->get('solicitudrenta');
+		$query = "SELECT *, (SELECT placa from vehiculo where vehiculo.idvehiculo = solicitudrenta.idvehiculo) as placa,
+					(select cedula from usuario where usuario.idusuario = solicitudrenta.idusuario) as cedula
+ 					from solicitudrenta";
+ 		$query = $this->db->query($query);
 		if($query->num_rows() > 0) return $query;
 		else return false;
 	}

@@ -24,7 +24,8 @@ class Solicitud extends CI_Controller {
 			'usuarios' => $this->usuario_model->obtenerUsuarios(),
 			'vehiculos' => $this->vehiculo_model->cargarVehiculos()
 		 );
-		redirect(base_url('ver_solicitudes'));
+		$this->load->view('header');
+		$this->load->view('solicitudes/nueva',$data);
 	}
 
 
@@ -75,6 +76,10 @@ class Solicitud extends CI_Controller {
 
 	}
 
+
+	/*
+	*Funcion para eliminar una solicitud.
+	*/
 	function eliminar(){
 		$id = $this->uri->segment(4);
 		$this->solicitud_model->eliminarSolicitud($id);

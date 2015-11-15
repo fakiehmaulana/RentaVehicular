@@ -31,31 +31,38 @@
 		'placeholder' => 'Escribe tu correo'
 	);
 ?>
+<div class='form-group'>
 	<?= form_label('Nombre:' , 'nombre') ?>
 	<?= form_input($nombre) ?>
-	<br>
+  </div>
 
+<div class='form-group'>
 	<?= form_label('Cedula:' , 'cedula') ?>
 	<?= form_input($cedula) ?>
-	<br>
+  </div>
 
+<div class='form-group'>
 	<?= form_label('Licencia:' , 'licencia') ?>
 	<?= form_input($licencia) ?>
-	<br>
+  </div>
 
+<div class='form-group'>
 	<?= form_label('Email:' , 'email') ?>
 	<?= form_input($email) ?>
-	<br>
+  </div>
 
+<div class='form-group'>
 	<?= form_label('Telefono:' , 'telefono') ?>
 	<?= form_input($telefono) ?>
-	<br>
+  </div>
 
+<div class='form-group'>
 	<?= form_label('Direccion:' , 'direccion') ?>
 	<?= form_input($direccion) ?>
+  </div>
 	<br><br><br>
 
-	<?= form_submit('','Registrar')?>
+	<?= form_submit('','Agregar')?>
 <?= form_close() ?>
 
 </div>

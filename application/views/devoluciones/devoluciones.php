@@ -61,6 +61,17 @@ if($devoluciones){
 			<td>
 				<?= $devolucion->Observaciones;  ?>
 			</td>
+			<td>
+				<a href="<?= base_url("/devoluciones/devolucion/editar/".$devolucion->idDevolucionRenta);  ?>">
+					Editar
+			</a>
+			</td>
+			<td>
+				<a href="<?= base_url("/devoluciones/devolucion/eliminar/".$devolucion->idDevolucionRenta);  ?>"
+				 onclick="return confirm('Desea Eliminar esta devolucion?')">
+					Eliminar
+			</a>
+			</td>
 		</tr>
 
 

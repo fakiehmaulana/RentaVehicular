@@ -50,6 +50,48 @@ class Devolucion extends CI_Controller {
 		$this->load->view('devoluciones/nueva');
 	}
 
+
+	/*
+	*Funcion para abrir la vista de editar de los datos de una devolucion.
+	*/
+	function editar(){
+		$data['idDevolucion'] = $this->uri->segment(4);
+		$data['devolucion'] = $this->devolucion_model->cargarDevolucion($data['idDevolucion']);
+		$data['usuarios'] = $this->usuario_model->obtenerUsuarios();
+		$data['vehiculos'] = $this->vehiculo_model->cargarVehiculos();
+		$this->load->view('header');
+		$this->load->view('devoluciones/editar',$data);
+	}
+
+	/*
+	*Funcion para actualizar una devolucion.
+	*/
+	function actualizar(){
+		$data = array(
+			'fecha' => $this->input->post('fecha'),
+			'hora' => $this->input->post('hora'),
+			'kilometraje' => $this->input->post('kilometraje'),
+			'estado' => $this->input->post('estado'),
+			'observaciones' => 	$this->input->post('observaciones'),
+			'vehiculo' => $this->input->post('vehiculo'),
+			'usuario' => $this->input->post('usuario'), 
+			);
+
+		$this->devolucion_model->actualizarDevolucion($this->uri->segment(4),$data);
+		redirect(base_url('ver_devoluciones'));
+
+	}
+
+
+	/*
+	*Funcion para eliminar una devolucion.
+	*/
+	function eliminar(){
+		$id = $this->uri->segment(4);
+		$this->devolucion_model->eliminarDevolucion($id);
+		redirect(base_url('ver_devoluciones'));
+	}
+
 }
 
 ?>

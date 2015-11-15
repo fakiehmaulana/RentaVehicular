@@ -26,6 +26,7 @@
 	</tr>
 
 <?php
+	
 
 if($solicitudes){
 	
@@ -35,10 +36,10 @@ if($solicitudes){
 				<center><?= $solicitud->idSolicitudRenta;  ?></center>
 			</td>
 			<td>
-				<?= $solicitud->idUsuario;  ?>
+				<?= $solicitud->cedula;  ?>
 			</td>
 			<td>
-				<?= $solicitud->idVehiculo;  ?>
+				<?= $solicitud->placa;  ?>
 			</td>
 			<td>
 				<?= $solicitud->Kilometraje;  ?>

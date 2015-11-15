@@ -38,7 +38,6 @@
            <ul class="dropdown-menu">
         <li><a href=<?= base_url('nuevo_vehiculo'); ?> >Agregar Vehiculos</a></li>
         <li><a href=<?= base_url('ver_vehiculos'); ?>>Visualizar Vehiculos</a></li>
-        <li><a href=<?= base_url('nuevo_vehiculo'); ?>>Eliminar Vehiculos</a></li>
         
         </ul>
           </li>
@@ -48,7 +47,6 @@
            <ul class="dropdown-menu">
     		 <li><a href=<?= base_url('nuevo_cliente'); ?> >Crear Cliente</a></li>
         <li><a href=<?= base_url('ver_clientes'); ?>>Visualizar Clientes</a></li>
-        <li><a href=<?= base_url('nuevo_cliente'); ?>>Eliminar Cliente</a></li>
     		
     	  </ul>
           </li>
@@ -58,7 +56,6 @@
            <ul class="dropdown-menu">
         <li><a href=<?= base_url('nueva_solicitud'); ?> >Crear Solicitud</a></li>
         <li><a href=<?= base_url('ver_solicitudes'); ?>>Visualizar Solicitudes</a></li>
-        <li><a href=<?= base_url('nueva_solicitud'); ?>>Eliminar Solicitud</a></li>
         
         </ul>
           </li>
@@ -68,12 +65,9 @@
            <ul class="dropdown-menu">
         <li><a href=<?= base_url('nueva_devolucion'); ?> >Crear Devolucion</a></li>
         <li><a href=<?= base_url('ver_devoluciones'); ?>>Visualizar Devoluciones</a></li>
-        <li><a href=<?= base_url('nueva_devolucion'); ?>>Eliminar Devolucion</a></li>
         
         </ul>
           </li>
-
-          <li class="#"><a href="#contact">Contacto</a></li>
         </ul>
       </div>
     </div>
