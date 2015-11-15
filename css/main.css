@@ -1,0 +1,52 @@
+*{
+}
+.pie{
+	background: #f9f8ba;
+  min-height: 5em;
+  position: absolute;
+  bottom: 0;
+  width: 90%;
+
+}
+ .span4 p{
+	color: #778899;
+}
+.span4 h2{
+	color: #778899;
+}
+.hero-unit{
+	 background-color:cadetblue;
+
+}
+.navbar-inner{
+	color:cadetblue;	
+}
+.blacky-back {
+    background-color: #333333;
+    height: 99px;
+    width: 100%;
+}
+.f-menu {
+    clear: both;
+    text-align: center;
+    width: 465px;
+    margin-left: auto;
+    margin-right: auto;
+}
+.f-menu ul.menu {
+    display: inline-block;
+    list-style-type: none;
+    clear: both;
+    margin-top: 30px;
+    margin-bottom: 10px;
+    margin-left: 0;
+    padding-left: 0;
+    text-align: center;
+    margin-right: 0px;
+    padding-right: 0px;
+}
+.f-menu ul.menu li {
+    float: left;
+    margin-right: 3px;
+    margin-left: 3px;
+}
