@@ -40,7 +40,7 @@ class Vehiculo_model extends CI_Model{
 	/*
 	*Funcion para actualizar un vehiculo en la base de datos.
 	*/
-	function actualizarvehiculo($id,$data){
+	function actualizarVehiculo($id,$data){
 
 		$data = array(
 			'tipo' => $data['tipo'],
