@@ -38,7 +38,8 @@
 |
 */
 
-$route['default_controller'] = "welcome";
+$route['default_controller'] = "login";
+$route['home'] = "home";
 $route['nueva_solicitud'] = 'solicitudes/solicitud/nueva';
 $route['ver_solicitudes'] = 'solicitudes/solicitud';
 $route['nuevo_cliente'] = 'usuarios/usuario/nuevo';

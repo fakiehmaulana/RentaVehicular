@@ -45,48 +45,48 @@ if($vehiculos){
  foreach ($vehiculos->result() as $vehiculo) { ?>
 		<tr>
 			<td>
-				<?= $vehiculo->idVehiculo;  ?>
+				<center><?= $vehiculo->idVehiculo;  ?></center>
 			</td>
 			<td>
-				<?= $vehiculo->Tipo;  ?>
+				<center><?= $vehiculo->Tipo;  ?></center>
 			</td>
 			<td>
-				<?= $vehiculo->urlFoto;  ?>
+				<center><img src="<?= base_url('/img/'.$vehiculo->urlFoto)  ?>" width="50%" height="50%" class="img-rounded"></center>
 			</td>
 			<td>
-				<?= $vehiculo->Marca;  ?>
+				<center><?= $vehiculo->Marca;  ?></center>
 			</td>
 			<td>
-				<?= $vehiculo->Capacidad;  ?>
+				<center><?= $vehiculo->Capacidad;  ?></center>
 			</td>
 			<td>
-				<?= $vehiculo->Precio;  ?>
+				<center><?= $vehiculo->Precio;  ?></center>
 			</td>
 			<td>
-				<?= $vehiculo->Disponibilidad;  ?>
+				<center><?= $vehiculo->Disponibilidad;  ?></center>
 			</td>
 			<td>
-				<?= $vehiculo->Color;  ?>
+				<center><?= $vehiculo->Color;  ?></center>
 			</td>
 			<td>
-				<?= $vehiculo->Modelo;  ?>
+				<center><?= $vehiculo->Modelo;  ?></center>
 			</td>
 			<td>
-				<?= $vehiculo->Placa;  ?>
+				<center><?= $vehiculo->Placa;  ?></center>
 			</td>
 			<td>
-				<?= $vehiculo->Kilometraje;  ?>
+				<center><?= $vehiculo->Kilometraje;  ?></center>
 			</td>
 			<td>
-				<a href="<?= base_url("/vehiculos/vehiculo/editar/".$vehiculo->idVehiculo);  ?>">
+				<center><a href="<?= base_url("/vehiculos/vehiculo/editar/".$vehiculo->idVehiculo);  ?>">
 					Editar
-			</a>
+			</a></center>
 			</td>
 			<td>
-				<a href="<?= base_url("/vehiculos/vehiculo/eliminar/".$vehiculo->idVehiculo);  ?>"
+				<center><a href="<?= base_url("/vehiculos/vehiculo/eliminar/".$vehiculo->idVehiculo);  ?>"
 				 onclick="return confirm('Desea Eliminar este vehiculo?')">
 					Eliminar
-			</a>
+			</a></center>
 			</td>
 		</tr>
 

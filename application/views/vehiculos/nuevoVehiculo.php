@@ -58,7 +58,7 @@
 
 <div class='form-group'>
  	<?= form_label('URl Foto:','urlFoto') ?>
- 	<?= form_input($urlFoto) ?>
+ 	<?= form_upload($urlFoto) ?>
  </div>
 
 <div class='form-group'>

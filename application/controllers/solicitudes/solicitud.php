@@ -7,6 +7,11 @@ class Solicitud extends CI_Controller {
 		$this->load->model('solicitudes/solicitud_model');
 		$this->load->model('usuarios/usuario_model');
 		$this->load->model('vehiculos/vehiculo_model');
+
+		if(! $this->session->userdata('logged_in'))
+   {
+     redirect(base_url('login'), 'refresh');
+   }
 	}
 
 	
@@ -22,7 +27,7 @@ class Solicitud extends CI_Controller {
 	function nueva(){
 		$data = array(
 			'usuarios' => $this->usuario_model->obtenerUsuarios(),
-			'vehiculos' => $this->vehiculo_model->cargarVehiculos()
+			'vehiculos' => $this->vehiculo_model->cargarVehiculosDisp()
 		 );
 		$this->load->view('header');
 		$this->load->view('solicitudes/nueva',$data);
@@ -44,6 +49,7 @@ class Solicitud extends CI_Controller {
 			);
 
 		$this->solicitud_model->crearSolicitud($data);
+		$this->vehiculo_model->actualizarDisponibilidad($data['vehiculo'],0);
 		redirect(base_url('ver_solicitudes'));
 	}
 

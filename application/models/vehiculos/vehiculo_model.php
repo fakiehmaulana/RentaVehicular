@@ -26,6 +26,22 @@ class Vehiculo_model extends CI_Model{
 		if($query->num_rows() > 0) return $query;
 		else return false;
 	}
+
+	//Carga todos los vehiculos disponibles en la BD
+	function cargarVehiculosDisp(){
+		$this->db->where('Disponibilidad',1);
+		$query = $this->db->get('vehiculo');
+		if($query->num_rows() > 0) return $query;
+		else return false;
+	}
+
+	//Carga todos los vehiculos disponibles en la BD
+	function cargarVehiculosNoDisp(){
+		$this->db->where('Disponibilidad',0);
+		$query = $this->db->get('vehiculo');
+		if($query->num_rows() > 0) return $query;
+		else return false;
+	}
 	
 	/*
 	*Funcion para cargar un vehiculo de la base de datos.
@@ -66,6 +82,28 @@ class Vehiculo_model extends CI_Model{
 	function eliminarVehiculo($id){
 		$this->db->delete('vehiculo',array('idVehiculo'=>$id));
 
+	}
+
+	function actualizarDisponibilidad($id,$Disp){
+
+		$datos = array(
+			'Disponibilidad'=>$Disp
+			);
+
+		$query = "UPDATE vehiculo SET Disponibilidad = ".$Disp." WHERE idVehiculo = ".$id;
+ 		$query = $this->db->query($query);
+		
+	}
+
+	function actualizarKilometraje($id,$Kilo){
+
+		$datos = array(
+			'Kilometraje'=>$Disp
+			);
+
+		$query = "UPDATE vehiculo SET Kilometraje = ".$Kilo." WHERE idVehiculo = ".$id;
+ 		$query = $this->db->query($query);
+		
 	}
 }
 ?>

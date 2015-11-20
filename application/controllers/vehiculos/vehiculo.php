@@ -4,6 +4,11 @@ class Vehiculo extends CI_Controller {
 		parent::__construct();
 		$this->load->helper('form');
 		$this->load->model('vehiculos/vehiculo_model');
+
+		if(! $this->session->userdata('logged_in'))
+   {
+     redirect(base_url('login'), 'refresh');
+   }
 	}
 	
 	function index(){

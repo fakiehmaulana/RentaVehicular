@@ -15,7 +15,7 @@ Ejecuta el metodo del controlador.
 	*/
 	$fecha = array(
 		'name' => 'fecha',
-		 'placeholder' => 'dd/mm/yyyy'
+		 'placeholder' => 'yyyy-mm-dd'
 		 );
 
 	$hora =	array(

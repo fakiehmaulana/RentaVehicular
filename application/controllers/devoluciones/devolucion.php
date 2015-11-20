@@ -7,6 +7,11 @@ class Devolucion extends CI_Controller {
 		$this->load->model('devoluciones/devolucion_model');
 		$this->load->model('usuarios/usuario_model');
 		$this->load->model('vehiculos/vehiculo_model');
+		
+		if(! $this->session->userdata('logged_in'))
+  	 {
+     redirect(base_url('login'), 'refresh');
+  	 }
 	}
 
 	
@@ -22,7 +27,7 @@ class Devolucion extends CI_Controller {
 	function nueva(){
 		$data = array(
 			'usuarios' => $this->usuario_model->obtenerUsuarios(),
-			'vehiculos' => $this->vehiculo_model->cargarVehiculos()
+			'vehiculos' => $this->vehiculo_model->cargarVehiculosNoDisp()
 		 );
 		$this->load->view('header');
 		$this->load->view('devoluciones/nueva',$data);
@@ -46,8 +51,10 @@ class Devolucion extends CI_Controller {
 			);
 
 		$this->devolucion_model->crearDevolucion($data);
+		$this->vehiculo_model->actualizarDisponibilidad($data['vehiculo'],1);
+		$this->vehiculo_model->actualizarKilometraje($data['vehiculo'],$data['kilometraje']);
 		$this->load->view('header');
-		$this->load->view('devoluciones/nueva');
+		redirect(base_url('ver_devoluciones'));
 	}
 
 

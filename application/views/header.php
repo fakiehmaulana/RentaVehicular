@@ -31,7 +31,8 @@
         <ul class="nav nav-tabs">
           <li class="active"><a href=<?= base_url('ver_vehiculos'); ?> >Home</a></li>
           
-          <li class="#"><a href="">Iniciar Sesión </a></li>
+          <li class="#"><a href="<?= base_url("/home/logout");  ?>"
+         onclick="return confirm('Desea Cerrar Sesion?')">Cerrar Sesion </a></li>
 
       <li class="dropdown">
         <a class="dropdown-toggle" href="#" data-toggle="dropdown">Vehiculos<span class="caret"></span></a>
@@ -82,5 +83,4 @@
   			<p>Bienvenidos a nuestro sitio web donde nuestra oferta será tenerle los mejores carros a su disposición 
   			las 24 horas del día para su comidad y seguridad cualquiera de nuestros carros cuenta con las mejores
   			estandares de alineación y balanceo</p>
-  			<p><a class="btn btn-primary btn-large">Más información</a></p>
 		</div>

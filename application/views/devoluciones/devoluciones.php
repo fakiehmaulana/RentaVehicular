@@ -41,10 +41,10 @@ if($devoluciones){
 				<?= $devolucion->idDevolucionRenta;  ?>
 			</td>
 			<td>
-				<?= $devolucion->idUsuario;  ?>
+				<?= $devolucion->cedula;  ?>
 			</td>
 			<td>
-				<?= $devolucion->idVehiculo;  ?>
+				<?= $devolucion->placa;  ?>
 			</td>
 			<td>
 				<?= $devolucion->Kilometraje;  ?>

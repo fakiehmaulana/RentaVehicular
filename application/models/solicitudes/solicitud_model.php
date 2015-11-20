@@ -21,7 +21,6 @@ class Solicitud_model	 extends CI_Model{
 		 );
 
 		$this->db->insert('solicitudrenta',$datos);
-
 	}
 
 	/*
